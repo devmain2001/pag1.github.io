@@ -1,0 +1,267 @@
+/* Reset y básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+}
+
+header {
+    background-color: #FFD700;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    font-size: 28px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #007BFF;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+main {
+    padding: 30px 20px;
+}
+
+/* === GALERÍA DE DESAYUNOS === */
+.galeria {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra todo el contenedor en la página */
+    padding: 40px 20px;
+    text-align: center;
+    
+    display: flex;              /* Flexbox */
+    flex-wrap: wrap;            /* Para que bajen si no caben */
+    justify-content: center;    /* Centra horizontalmente las tarjetas */
+    gap: 30px;                  /* Espacio entre tarjetas */
+}
+
+.galeria h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    width: 100%;
+}
+
+.galeria .desayuno {
+    flex: 1 1 calc(34% - 30px); /* Más ancho, aún caben 3 por fila */
+    max-width: calc(34% - 30px);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    min-height: 340px;
+    padding-bottom: 20px;
+}
+
+
+.galeria .desayuno:hover {
+    transform: translateY(-5px);
+}
+
+.galeria .desayuno img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.galeria .desayuno h3 {
+    margin-top: 10px;
+    color: #222;
+    text-align: center;
+}
+
+.galeria .desayuno p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 10px 10px;
+    text-align: center;
+}
+
+
+/* Oculta el texto adicional inicialmente */
+.descripcion {
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilo del botón "Ver más" */
+.ver-mas {
+    background-color: #FFD700;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-mas:hover {
+    background-color: #FFC107;
+}
+
+/* Tarjetas desayuno 
+.desayuno {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    display: flex;  
+    flex-direction: column; 
+}
+*/
+.desayuno:hover {
+    transform: translateY(-5px);
+}
+
+.desayuno img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.desayuno h3 {
+    margin-top: 10px;
+    color: #222;
+}
+
+.desayuno p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 10px 10px;
+}
+
+/* Secciones */
+#nosotros, #contacto {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    
+}
+#contacto ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* En móvil, las tarjetas ocupan casi todo el ancho */
+    .desayuno {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* === MEJORAS RESPONSIVAS === */
+
+/* En tablets y dispositivos medianos */
+@media (max-width: 1024px) {
+    .galeria .desayuno {
+        flex: 1 1 calc(48% - 20px); /* Dos por fila */
+        max-width: calc(48% - 20px);
+    }
+}
+
+/* En móviles */
+@media (max-width: 600px) {
+    .galeria .desayuno {
+        flex: 1 1 90%; /* Una por fila */
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .galeria h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .logo h1 {
+        font-size: 22px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    #nosotros,
+    .contacto {
+        list-style: none;
+        padding-left: 0; /* Opcional: quita el espacio a la izquierda */
+    }
+
+}
+
+/* Para evitar imágenes muy grandes en pantallas pequeñas */
+img {
+    max-width: 100%;
+    height: auto;
+}
