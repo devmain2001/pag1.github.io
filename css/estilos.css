@@ -5,263 +5,520 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #fdfdfd;
+:root {
+    --primary-color: #2C5530;      /* Verde oscuro elegante */
+    --secondary-color: #D4A574;    /* Dorado cálido */
+    --accent-color: #E8B86D;       /* Dorado más claro */
+    --text-dark: #1A1A1A;          /* Negro suave */
+    --text-light: #6B7280;         /* Gris medio */
+    --background: #FEFEFE;          /* Blanco puro */
+    --card-bg: #FFFFFF;             /* Blanco para tarjetas */
+    --warm-bg: #F9F7F4;             /* Fondo cálido */
+    --shadow: rgba(44, 85, 48, 0.1); /* Sombra verde suave */
+    --shadow-hover: rgba(44, 85, 48, 0.15);
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--background) 0%, var(--warm-bg) 100%);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header mejorado */
 header {
-    background-color: #FFD700;
-    color: #333;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a21 100%);
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    flex-wrap: wrap;
+    padding: 20px 40px;
+    box-shadow: 0 4px 20px rgba(44, 85, 48, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .logo h1 {
-    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    letter-spacing: 2px;
 }
 
 nav {
     display: flex;
     align-items: center;
+    z-index: 10;
 }
 
 .menu {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .menu a {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 25px;
+    position: relative;
 }
 
 .menu a:hover {
-    color: #007BFF;
+    color: var(--accent-color);
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
 }
 
 .menu-toggle {
     display: none;
-    font-size: 26px;
+    font-size: 28px;
     cursor: pointer;
+    color: white;
+    z-index: 10;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--warm-bg) 0%, var(--background) 100%);
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D4A574" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%232C5530" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 165, 116, 0.4);
 }
 
 main {
-    padding: 30px 20px;
+    padding: 60px 40px;
 }
 
-/* === GALERÍA DE DESAYUNOS === */
+/* Galería mejorada */
 .galeria {
     max-width: 1200px;
-    margin: 0 auto; /* Centra todo el contenedor en la página */
-    padding: 40px 20px;
+    margin: 0 auto;
+    padding: 60px 20px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    margin: 60px 0;
+    background: var(--warm-bg);
+    justify-content: center;
+    flex-wrap: wrap;
     
-    display: flex;              /* Flexbox */
-    flex-wrap: wrap;            /* Para que bajen si no caben */
-    justify-content: center;    /* Centra horizontalmente las tarjetas */
-    gap: 30px;                  /* Espacio entre tarjetas */
 }
+
 
 .galeria h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #333;
-    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
 }
 
-.galeria .desayuno {
-    flex: 1 1 calc(34% - 30px); /* Más ancho, aún caben 3 por fila */
-    max-width: calc(34% - 30px);
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    min-height: 340px;
-    padding-bottom: 20px;
+.galeria h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
 }
 
-
-.galeria .desayuno:hover {
-    transform: translateY(-5px);
+.galeria-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.galeria .desayuno img {
-    width: 90%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 15px;
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    justify-items: center; /* Centra horizontalmente */
 }
 
-.galeria .desayuno h3 {
-    margin-top: 10px;
-    color: #222;
-    text-align: center;
-}
-
-.galeria .desayuno p {
-    font-size: 14px;
-    color: #666;
-    padding: 0 10px 10px;
-    text-align: center;
-}
-
-
-/* Oculta el texto adicional inicialmente */
-.descripcion {
-    display: none; /* Inicialmente oculto */
-}
-
-/* Estilo del botón "Ver más" */
-.ver-mas {
-    background-color: #FFD700;
-    color: #333;
-    border: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.ver-mas:hover {
-    background-color: #FFC107;
-}
-
-/* Tarjetas desayuno 
 .desayuno {
-    background-color: white;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+    border-radius: 20px;
     overflow: hidden;
-    padding: 10px;
-    transition: transform 0.3s ease;
-    display: flex;  
-    flex-direction: column; 
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: all 0.4s ease;
+    position: relative;
+    cursor: pointer;
+    max-width: 350px; /* Ancho máximo para desktop */
+    width: 90%; /* Ajusta el ancho para móviles */
+    margin: 0 auto; /* Centra la tarjeta */
 }
-*/
+
 .desayuno:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px var(--shadow-hover);
+}
+
+.desayuno::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(44, 85, 48, 0.02) 100%);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.desayuno:hover::before {
+    opacity: 0;
+}
+
+.desayuno-content {
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    text-align: center; /* Alinea el texto al centro */
 }
 
 .desayuno img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 250px; /* Altura fija para desktop */
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.desayuno:hover img {
+    transform: scale(1.05);
 }
 
 .desayuno h3 {
-    margin-top: 10px;
-    color: #222;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
 
-.desayuno p {
+.descripcion {
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    display: block;
+    text-align: justify; /* Justifica el texto para una apariencia limpia */
+}
+
+.ver-mas {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
     font-size: 14px;
-    color: #666;
-    padding: 0 10px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Secciones */
-#nosotros, #contacto {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: #f5f5f5;
-    
+.ver-mas:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
 }
-#contacto ul {
+
+/* Secciones mejoradas */
+#nosotros,
+#contacto {
+    padding: 80px 40px;
+    text-align: center;
+    background: var(--warm-bg);
+    margin: 60px 0;
+    border-radius: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#nosotros::before,
+#contacto::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(44, 85, 48, 0.03) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#nosotros h2,
+#contacto h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+#nosotros p,
+#contacto p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contacto {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin-top: 30px;
+    position: relative;
+    z-index: 2;
 }
 
+.contacto li {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin: 15px 0;
+    padding: 15px 25px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px var(--shadow);
+    display: inline-block;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contacto li:hover {
+    transform: translateY(-3px);
+}
+
+/* Footer mejorado */
 footer {
-    background-color: #333;
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a21 100%);
+    color: white;
     text-align: center;
-    padding: 15px;
+    padding: 40px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--secondary-color));
+}
 
-    .menu.active {
-        display: flex;
+footer p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+    header {
+        overflow: visible; /* Permite que el menú salga del header */
+        position: relative;
+        z-index: 100;
     }
 
     .menu-toggle {
         display: block;
-        margin-left: auto;
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+        z-index: 101;
+        position: relative;
     }
 
-    /* En móvil, las tarjetas ocupan casi todo el ancho */
-    .desayuno {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-}
-
-/* === MEJORAS RESPONSIVAS === */
-
-/* En tablets y dispositivos medianos */
-@media (max-width: 1024px) {
-    .galeria .desayuno {
-        flex: 1 1 calc(48% - 20px); /* Dos por fila */
-        max-width: calc(48% - 20px);
-    }
-}
-
-/* En móviles */
-@media (max-width: 600px) {
-    .galeria .desayuno {
-        flex: 1 1 90%; /* Una por fila */
-        max-width: 90%;
-        margin: 0 auto;
+    .menu {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        background: var(--primary-color);
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 999;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 10px 10px;
     }
 
-    .galeria h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-
-    .logo h1 {
-        font-size: 22px;
+    .menu.active {
+        display: flex; /* Se muestra al hacer clic */
     }
 
     .menu a {
-        font-size: 16px;
+        text-align: center;
+        font-size: 18px;
+        padding: 15px 0;
     }
 
-    main {
-        padding: 20px 15px;
+    nav .menu {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    #nosotros,
-    .contacto {
-        list-style: none;
-        padding-left: 0; /* Opcional: quita el espacio a la izquierda */
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
     }
 
+    .galeria h2 {
+        font-size: 1.8rem;
+    }
+
+    .desayuno img {
+        height: 200px; /* Reduce la altura para móviles */
+    }
 }
 
-/* Para evitar imágenes muy grandes en pantallas pequeñas */
-img {
-    max-width: 100%;
-    height: auto;
+/* Animaciones adicionales */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.desayuno {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.desayuno:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.desayuno:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.desayuno:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.desayuno:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.desayuno:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.desayuno:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.imagen-platillo.expandida {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }

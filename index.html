@@ -4,89 +4,106 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>HNUMA | Desayunos</title>
-    <link rel="stylesheet" href="css/estilos.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css "/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter :wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css"> <!-- archivo externo -->
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">
-            <h1>HNUMA</h1>
+<header>
+    <div class="logo">
+        <a href="#">
+            <img src="/img/img2.png" alt="Logo HNUMA" width="180">
+        </a>
+    </div>
+    <nav>
+        <div class="menu-toggle">&#9776;</div>
+        <ul class="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#desayunos">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Desayunos Extraordinarios</h1>
+            <p>Descubre sabores auténticos que despiertan tus sentidos. Cada mañana es una nueva oportunidad para disfrutar de lo mejor de nuestra cocina tradicional.</p>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+    </section>
 
     <main>
-
-        <!-- Galería de desayunos -->
-        <!-- Galería de desayunos -->
         <!-- Galería de desayunos -->
         <section class="galeria" id="desayunos">
             <h2>Nuestros Desayunos</h2>
+            <p class="galeria-subtitle">Cada platillo es preparado con ingredientes frescos y el amor de la cocina tradicional mexicana</p>
 
-            <article class="desayuno">
-                <img src="img/desayuno1.jpg" alt="Torta clásica" />
-                <h3>Torta Clásica</h3>
-                <p class="descripcion">
-                    Una torta ahogada tradicional con su exquisita salsa acompañada de un jugo natural.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
+            <div class="galeria-grid">
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno1.jpg" alt="Torta clásica" />
+                        <h3>Torta Clásica</h3>
+                        <p class="descripcion">
+                            Una torta ahogada tradicional con su exquisita salsa acompañada de un jugo natural.
+                        </p>
+                    </div>
+                </article>
 
-            <article class="desayuno">
-                <img src="img/desayuno2.jpg" alt="Chilaquiles con carne" />
-                <h3>Chilaquiles con Huevo y Carne</h3>
-                <p class="descripcion">
-                    Chilaquiles verdes acompañados de huevo estrellado y una porción de carne a la plancha.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno2.jpg" alt="Chilaquiles con carne" />
+                        <h3>Chilaquiles con Huevo y Carne</h3>
+                        <p class="descripcion">
+                            Chilaquiles verdes acompañados de huevo estrellado y una porción de carne a la plancha.
+                        </p>
+                    </div>
+                </article>
 
-            <article class="desayuno">
-                <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
-                <h3>Tacos de Camarón Empanizados</h3>
-                <p class="descripcion">
-                    Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
+                        <h3>Tacos de Camarón Empanizados</h3>
+                        <p class="descripcion">
+                            Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
+                        </p>
+                    </div>
+                </article>
 
-            <article class="desayuno">
-                <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
-                <h3>Tacos de Camarón Empanizados</h3>
-                <p class="descripcion">
-                    Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
-            <article class="desayuno">
-                <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
-                <h3>Tacos de Camarón Empanizados</h3>
-                <p class="descripcion">
-                    Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
-            <article class="desayuno">
-                <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
-                <h3>Tacos de Camarón Empanizados</h3>
-                <p class="descripcion">
-                    Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
-                </p>
-                <button class="ver-mas">Ver más</button>
-            </article>
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
+                        <h3>Tacos de Camarón Empanizados</h3>
+                        <p class="descripcion">
+                            Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
+                        <h3>Tacos de Camarón Empanizados</h3>
+                        <p class="descripcion">
+                            Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="desayuno">
+                    <div class="desayuno-content">
+                        <img src="img/desayuno3.jpg" alt="Tacos de camarón" />
+                        <h3>Tacos de Camarón Empanizados</h3>
+                        <p class="descripcion">
+                            Tres tacos dorados de camarón empanizado con col morada, aderezo especial y ensalada fresca.
+                        </p>
+                    </div>
+                </article>
+            </div>
         </section>
         
-
         <!-- Sección Nosotros -->
         <section id="nosotros">
             <h2>Sobre Nosotros</h2>
@@ -98,18 +115,22 @@
             <h2>Contacto</h2>
             <p>¿Tienes alguna pregunta? Contáctanos:</p>
             <ul class="contacto">
-                <li>Dirección: Calle Falsa 123</li>
-                <li>Teléfono: 555-1234</li>
-                <li>Email: ejemplo@email.com</li>
+                <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle Falsa 123</li>
+                <li><i class="fas fa-phone"></i> Teléfono: 555-1234</li>
+                <li><i class="fas fa-envelope"></i> Email: ejemplo@email.com</li>
             </ul>
         </section>
-
     </main>
 
     <footer>
         <p>Todos los derechos reservados © 2025 HNUMA | Diseñado por Yo Merenges 😎</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('.menu').classList.toggle('active');
+    });
+</script>
+
 </body>
 </html>
